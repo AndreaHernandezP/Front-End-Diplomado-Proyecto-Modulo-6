@@ -12,78 +12,101 @@ const html = `<div id="navigate-bar-box">
 
 const style = `<style> 
   
+#navigate-bar-box {
+  display: grid;
+  grid-template: ". logo menu" 3rem/1fr max-content 1fr;
+  background-color: white;
+  justify-content: center;
+  
+}
+
+.logo-ref{
+  grid-area: logo;
+}
+
+.logo {
+
+  /*Para que pueda reducir su tamaño y haga overflow en height*/
+  min-width: 0;
+  max-width: 100%;
+  
+
+  height: 5rem;
+  margin: calc(5rem / -10) 0 0rem 0;
+}
+
+.menu {
+  grid-area: menu;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 0;
+  flex-shrink: 1;
+  padding: 0 calc(calc(0.7rem + 0.5vw) / 2) 0 0;
+  margin-left: calc(calc(0.7rem + 0.5vw) / -2);
+}
+
+.menu a {
+  font-size: calc(0.7rem + 0.5vw);
+  font-family: sans-serif;
+  color: #D5C8C9;
+  text-decoration: none;
+  padding: 0 calc(calc(0.7rem + 0.5vw) / 2);
+  margin: 0 calc(calc(0.7rem + 0.5vw) / 2);
+  min-width: 0;
+  min-height: 0;
+  flex-shrink: 1;
+
+  transition: all 1s 0s;
+}
+
+a.focus { /*Focus on menu*/
+  color: #D5C8C9;
+  background: linear-gradient(white, white) padding-box, linear-gradient(90deg, #E3DFDF,  #D5C8C9) border-box;
+  border: 1px solid transparent;
+  border-radius: 0.4rem;
+}
+
+a.unfocus{ /*Unfocus on menu*/
+  color: #E3DFDF;
+}
+
+.border-nav {
+  width: 100%;
+  height: 0.1rem;
+  background: linear-gradient(90deg, #E3DFDF, #D5C8C9, #E3DFDF);
+  /*Add a bottom margin because the Logo is out of the box*/
+  margin-bottom: calc(5rem - 3rem + calc(5rem / -10));
+}
+
+@media (max-width:580px){
   #navigate-bar-box {
-    display: grid;
-    grid-template: ". logo menu" 3rem/1fr min-content 1fr;
-    background-color: white;
-    justify-content: center;
+    grid-template: ". logo ." 3rem
+                  ". menu ." 3rem /1fr min-content 1fr;
   }
-  
-  .logo-ref{
-    grid-area: logo;
-  }
-
-  .logo {
-    height: 5rem;
-    margin: calc(5rem / -10) 0 0rem 0;
-  }
-  
   .menu {
-    grid-area: menu;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    min-width: 0;
-    flex-shrink: 1;
-    padding: 0 calc(calc(0.7rem + 0.5vw) / 2) 0 0;
-    margin-left: calc(calc(0.7rem + 0.5vw) / -2);
+    margin-top:0.5rem;  /*El espacio que la imagen hace overflow hacia abajo*/
+    margin-left: 0;
   }
-  
+}
+
+@media (max-width:230px){
+  #navigate-bar-box {
+  grid-template: " logo " 3rem
+                  " menu " 1fr / 1fr ;
+  }
+  .menu {
+    flex-direction: column;
+
+    padding: calc(calc(0.7rem + 0.5vw) / 2) 0;
+  }
   .menu a {
-    font-size: calc(0.7rem + 0.5vw);
-    font-family: sans-serif;
-    color: #D5C8C9;
-    text-decoration: none;
-    padding: 0 calc(calc(0.7rem + 0.5vw) / 2);
-    margin: 0 calc(calc(0.7rem + 0.5vw) / 2);
-    min-width: 0;
-    min-height: 0;
-    flex-shrink: 1;
-
-    transition: all 1s 0s;
+    padding:  calc(calc(0.7rem + 0.5vw) / 4);
+    margin:  calc(calc(0.7rem + 0.5vw) / 4) 0;
   }
-
-  a.focus { /*Focus on menu*/
-    color: #D5C8C9;
-    background: linear-gradient(white, white) padding-box, linear-gradient(90deg, #E3DFDF,  #D5C8C9) border-box;
-    border: 1px solid transparent;
-    border-radius: 0.4rem;
-  }
-
-  a.unfocus{ /*Unfocus on menu*/
-    color: #E3DFDF;
-  }
-
-  .border-nav {
-    width: 100%;
-    height: 0.1rem;
-    background: linear-gradient(90deg, #E3DFDF, #D5C8C9, #E3DFDF);
-    /*Add a bottom margin because the Logo is out of the box*/
-    margin-bottom: calc(5rem - 3rem + calc(5rem / -10));
-  }
-
-  @media (max-width:580px){
-    #navigate-bar-box {
-      grid-template: ". logo ." 3rem
-                    ". menu ." 3rem /1fr min-content 1fr;
-    }
-    .menu {
-      margin-top:0.5rem;
-      margin-left: 0;
-    }
-  }
+}
 
 </style>`;
 
