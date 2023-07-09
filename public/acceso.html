@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blumier | Clima actual</title>
+        
+        <link rel="stylesheet" href="./fonts/index.css">
+        <link rel="stylesheet" href="./fonts/clima.css">
+        <link rel="stylesheet" href="./fonts/bebidas.css">
+        <link rel="stylesheet" href="./fonts/acceso.css">
+        <link rel="stylesheet" href="./fonts/style.css">
+    </head>
+    <body>
+        <nav-bar></nav-bar>
+        <div class="main-container">
+            <div id="contenedorGeneral">
+                
+                <h2>Acceso restringido</h2>
+                <template id="templateError">
+                    <h5 id="mensajeError">Lo sentimos, ha ocurrido un error</h5>
+                </template>
+
+                <form>
+                    <input action="/" method="GET" name="" placeholder="Usuario" >
+                    <br>
+                    <input action="/" method="GET" name="" placeholder="Contraseña" type="password">
+                    <br>
+                    <input id="button" type="button" value="Enviar">
+                </form>
+                
+                
+            </div>
+            <div class="main-box-content">
+        
+            </div>
+        </div>
+        <footer-custom></footer-custom>
+    </body>
+        <script type="module" src="main.js"></script>
+        <script src="acceso.js"></script>
+</html>

@@ -1,0 +1,25 @@
+/*index.css*/
+.main-box-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 20rem)); /* Hace que se llenen las columnas sin hacer overflow */
+    justify-content:space-evenly; /*  center or space-evenly */
+    gap: 5rem;  /*Space between products*/
+    margin: 3rem 0;
+  }
+  
+  .room-title{
+    font-family: Garineldo;
+    font-size: calc(1.5rem + 0.6vw);
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .room-description{
+    font-size: calc(0.7rem + 0.5vw);
+    margin: -1rem 1rem 1rem 1rem;
+    padding: 0;
+  }
+  .room-description ul{
+  margin: 0 1rem;
+  line-height: 1.5rem;
+  }

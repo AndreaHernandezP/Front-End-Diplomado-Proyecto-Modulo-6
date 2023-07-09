@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blumier | Clima actual</title>
+        <link rel="stylesheet" href="./fonts/clima.css">
+        <link rel="stylesheet" href="./fonts/style.css">
+    </head>
+    <body>
+        <nav-bar></nav-bar>
+        <div class="main-container">
+            <div id="contenedorGeneral">
+                <img id="nubesAnimacion" src="Nubes_animacion.svg">
+                <img id="Logo" src="Weather_Logo.svg">
+                <h2>Información del Clima</h2>
+                <template id="templateError">
+                    <h5 id="mensajeError">Lo sentimos, ha ocurrido un error</h5>
+                </template>
+
+                <form>
+                    <input action="/" method="GET" name="" placeholder="Por favor, ingrese un lugar">
+                    <br>
+                    <input id="button" type="button" value="Buscar">
+                </form>
+                
+                <template id="templateDatos">
+                <div id="template">
+                    <span id="City">
+                        <h2 id="ciudadBuscada"> New York, United states of america </h2> 
+                        <img id="iconoClima" src="Icono_clima.svg">
+                    </span>
+                    
+                    <div id="contenedorDatosClima">
+                        <div id="encabezadoDatosClima">
+                            <h3>Temperatura</h3>
+                            <h3>Velocidad del aire</h3>
+                            <h3>Humedad</h3>
+                        </div>
+                        <div id="datosClima">
+                            <h4 id="temperature">17 °C</h4>
+                            <h4 id="windSpeed">5 km/h</h4>
+                            <h4 id="humidity">100%</h4>
+                        </div>
+                    </div>
+                </div>
+                </template>
+            </div>
+        </div>
+        <footer-custom></footer-custom>
+    </body>
+        <script type="module" src="main.js"></script>
+        <script src="clima.js"></script>
+</html>

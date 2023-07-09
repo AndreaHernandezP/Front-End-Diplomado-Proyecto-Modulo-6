@@ -1,0 +1,32 @@
+{
+    "rooms":[
+        {
+            "number": "Habitación 102",
+            "bed": "dos camas individuales",
+            "guest": 2,
+            "balcony": "no",
+            "src": "cbec10a82fdbd68bfc0acce710aa53b2.jpg"
+        },
+        {
+            "number": "Habitación 235",
+            "bed": "una cama Queen size",
+            "guest": 2,
+            "balcony": "si",
+            "src": "7c013412c4040e827e78a24775d91a63.jpg"
+        },
+        {
+            "number": "Habitación 402",
+            "bed": "una cama King size",
+            "guest": 3,
+            "balcony": "no",
+            "src": "9b1bebf012f5d6264f7ccbbeffcb324e.jpg"
+        },
+        {
+            "number": "Habitación 328",
+            "bed": "dos camas matrimoniales",
+            "guest": 4,
+            "balcony": "si",
+            "src": "542d051812594151ff4bf83ff43fc764.jpg"
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+
+.main-container{
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#contenedorGeneral{
+    max-width: 90%;
+    min-width: 40%;
+}
+
+.main-box-content{
+    width: 100%;
+    
+  }
+
+
+/**/
+.box-product{ /*Si no se usa flex, las filas de la descripción no son del mismo tamaño en la fila*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+   
+    background-color: #F0ECEC;
+    border-radius: 1rem;
+   
+    padding: 1rem;
+    gap: 1rem;
+   } 
+   
+   .box-product-grid{
+    display: grid;
+    grid-template-areas: "thumbnail"; /*overlaping video and image thumbnail*/
+   }
+   
+   .box-product video{
+    grid-area: thumbnail;
+    border-radius: 1rem;
+    z-index: 0;
+    width: 100%;
+   }
+   
+   .box-product img{       /* Imagen no se reduce, ignora el contenedor */
+    grid-area: thumbnail;
+    border-radius: 1rem;
+    z-index: 1;
+    width: 100%;
+   } 
+   
+   .box-product-description{
+   
+   font-family: Eras;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    height: 100%; /*Sin esto, los espacios son de diferente tamaño // Makes description spaces equal on the row*/
+   }
+   

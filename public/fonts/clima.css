@@ -1,0 +1,255 @@
+
+@font-face {
+    font-family: 'Glametrix-light';     
+    src: url("GlametrixLight-0zjo.otf");
+  }
+
+  @font-face {
+    font-family: 'Sunflower';
+    src: url("SunflowerHighway-mrzv.otf");
+  }
+
+  @font-face {
+    font-family: 'Vegur';
+    src: url("Vegur-Yg1a.otf");
+  }
+
+
+.main-container{
+    background: white; /*linear-gradient(180deg, white, #E5E4E2);*/
+    background-attachment:fixed; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+#contenedorGeneral{
+    flex-shrink: 1;
+    flex-grow: 1;
+    background-color: white;
+    border-radius: 50px;
+    border: solid 0.3rem;
+    border-color: #E5E4E2;
+    max-width: 40rem;
+    min-width: 0px;
+    padding: 0 0 calc(0.8vw + 5vh) 0;
+    margin: 20px;
+    text-align:center;
+    flex-basis: 100%;  
+    position: relative;
+}
+
+#nubesAnimacion{
+    position: absolute;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    opacity: 20%;
+    animation: 3s linear 1s infinite running slidein;
+    left:0; /*En relación al Padre*/
+/*Referencia: https://stackoverflow.com/questions/25982135/why-does-left-50-transform-translatex-50-horizontally-center-an-element*/ 
+}
+
+@keyframes slidein{
+    0% {
+        transform: translateX(0%);
+        opacity: 0%;
+    }
+    68%,
+    72% {
+        opacity: 15%;
+        
+    }
+    100% {
+        transform: translateX(100%); /*En relación al porcentaje del objeto/child, Si mide 50%, se moverá su misma distancia con 100%*/
+        opacity: 0%;
+        right: 0;
+    }
+}
+
+
+#Logo{
+    width: calc(100% - 100px);
+}
+
+h2{
+    font-family: 'Glametrix-light';
+    font-size: 4.5vh;
+    color: #CEB2B7;
+    padding: 35px 0;
+    margin: 0px;
+    font-weight:400;
+}
+
+h5{
+    margin: -27px 0 12px 0;
+    padding: 0 0 0 0;
+    color:crimson;
+    font-family: sans-serif;
+}
+
+form{
+    padding: 0px;
+    margin: -8px;
+}
+
+input{
+    max-width: 70%;
+
+    margin: 0 0 0px 0;
+    /*text-align: center;*/
+    padding: 4px;
+    border: 1px solid #CEB2B7;
+    border-radius: 4px;
+    
+}
+
+  input:focus {
+    border: 1px solid transparent;
+    outline-style:groove;
+    outline-color: #D5C8C9;
+    outline-width: 1px;
+    
+  } 
+
+  /* input:focus {
+    border-width: 10px;
+    outline-style:none;
+    border-image: radial-gradient(circle, rgba(9,9,121,1) 0%, rgba(0,212,255,0.700717787114846) 48%, rgba(255,255,255,1) 100%);
+    border-image-slice: 1;
+    
+  }  */
+
+#button{
+    background: linear-gradient(to right, #D5C8C9, #E3DFDF);
+    border-radius: 12px;
+    border-style: none;
+    padding: 5px 20px;
+    margin: 15px;
+    
+    color: white;
+    font-size: 2.6vh;
+    font-weight: 100;
+}
+
+#button:hover{
+    background: linear-gradient(to right, #CEB2B7, #D5C8C9);
+}
+
+#template{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#City{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: nowrap;
+    padding: 0 0 0 0;
+    margin: 0;
+    max-width: 60%;
+    
+}
+
+#ciudadBuscada{
+    flex-basis: content;
+    
+    
+}
+
+#iconoClima{
+    height: 5vh;
+    padding: 10px;
+    
+    
+}
+
+#iconoClima2{
+    height: 2.5vh;
+    padding: 0px 0 0 0;    
+}
+
+#contenedorDatosClima{
+    background-color: #FDFCFD;
+    border-radius: 30px;
+    
+    width: 70%;
+}
+
+#encabezadoDatosClima{
+    background: linear-gradient(to right, #CEB2B7, #E2D4D8);
+    border-radius: 11px;
+    
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:space-around;
+    
+    padding: 10px 0px;
+    margin: 0;
+    
+    width: 100%;
+
+}
+
+h3{
+    color: white;
+    font-family: sans-serif;
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+}
+
+#datosClima{
+    display: flex;
+    flex-direction: row;
+    align-content:flex-end;
+    justify-content:space-around;
+    
+    padding: 10px 0px;
+    margin: 10px 0;
+}
+
+h4{
+    font-family:'Glametrix-light';;
+    font-size: 3.8vh;
+    color: #CEB2B7;
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width:450px){
+
+    #contenedorDatosClima{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    
+    #encabezadoDatosClima{
+        flex-direction:column;
+        
+        padding: 1rem;
+        margin: 0;
+        
+        width: min-content;
+        gap: 0.5rem;
+    
+    }
+
+    #datosClima{
+        flex-direction: column;
+        align-content:center;
+        justify-content:center;
+        
+        padding: 1rem;
+        margin: 0;
+        width: 100%;
+        gap: 0.5rem;
+    }
+  }

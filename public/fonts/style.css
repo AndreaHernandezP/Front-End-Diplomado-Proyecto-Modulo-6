@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+@font-face{
+    font-family: Tangerine;
+    src:url(TangerineRegular-7JAD.ttf);
+}
+
+@font-face{
+    font-family: Eras;
+    src:url(Eras\ Medium\ ITC.ttf);
+}
+
+@font-face{
+  font-family: Garineldo;
+  src:url(Garineldo-MJqY.otf);
+}
+
+
+
+li, a, h3, #button{
+    font-size: calc(0.7rem + 0.5vw);
+}
+
+h2, h4{
+  font-size: calc(1.2rem + 0.9vw);
+}
+
+h3, #button{
+  font-family: Eras;
+}
+
+h5{
+  font-size: calc(0.6rem + 0.3vw);
+}
+
+footer{
+  margin-top: 5rem;
+}
