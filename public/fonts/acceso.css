@@ -42,7 +42,8 @@
 
 /*Web component - prevents overflow*/
 comments-box{
-  max-width: 100%;
+  max-width: 100%;  /*prevents overflow - shrink*/
+  width: 100%;      /*all components have same width*/
 
 }
 
