@@ -37,10 +37,14 @@
     gap: 1rem;  /*Space between products*/
     
     margin: 0;
-
+    
 }
 
+/*Web component - prevents overflow*/
+comments-box{
+  max-width: 100%;
 
+}
 
 
 
@@ -60,6 +64,11 @@
 margin: 0 1rem;
 line-height: 1.5rem;
 }
+
+
+
+
+
 
 
 
