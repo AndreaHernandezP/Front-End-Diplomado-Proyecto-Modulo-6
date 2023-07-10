@@ -10,6 +10,8 @@ const style = `<style>
 
  padding: 1rem;
  gap: 1rem;
+
+
 } 
 
 .box-product-grid{

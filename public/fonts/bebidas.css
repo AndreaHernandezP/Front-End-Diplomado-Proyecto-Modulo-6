@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
 
+    margin: 0 5%;
 }
 
 #contenedorGeneral{
@@ -17,7 +18,7 @@
 
 
 /**/
-.box-product{ /*Si no se usa flex, las filas de la descripción no son del mismo tamaño en la fila*/
+/* .box-product{ 
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -31,7 +32,7 @@
    
    .box-product-grid{
     display: grid;
-    grid-template-areas: "thumbnail"; /*overlaping video and image thumbnail*/
+    grid-template-areas: "thumbnail"; 
    }
    
    .box-product video{
@@ -41,7 +42,7 @@
     width: 100%;
    }
    
-   .box-product img{       /* Imagen no se reduce, ignora el contenedor */
+   .box-product img{       
     grid-area: thumbnail;
     border-radius: 1rem;
     z-index: 1;
@@ -54,6 +55,6 @@
     padding: 1rem;
     border-radius: 1rem;
     background-color: whitesmoke;
-    height: 100%; /*Sin esto, los espacios son de diferente tamaño // Makes description spaces equal on the row*/
-   }
+    height: 100%; 
+   } */
    
