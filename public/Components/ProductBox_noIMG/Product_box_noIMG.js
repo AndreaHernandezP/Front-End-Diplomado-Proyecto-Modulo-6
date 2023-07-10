@@ -33,7 +33,13 @@ const style = `<style>
 
     
 
-    overflow-x: scroll;
+    overflow-x: scroll;     
+    scrollbar-width: none;      /*Firefox*/
+    -ms-overflow-style: none;   /*IE*/
+}
+.box-noimg-product-description::-webkit-scrollbar{ /*Chrome & Safari*/
+    width: 0;
+    height: 0;
 }
 
 @media (max-width:15rem){
