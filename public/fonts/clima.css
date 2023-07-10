@@ -178,7 +178,18 @@ input{
     border-radius: 30px;
     
     width: 70%;
+
+
+   
+    overflow-x: scroll;     
+    scrollbar-width: none;      /*Firefox*/
+    -ms-overflow-style: none;   /*IE*/
 }
+#contenedorDatosClima::-webkit-scrollbar{ /*Chrome & Safari*/
+    width: 0;
+    height: 0;
+}
+
 
 #encabezadoDatosClima{
     background: linear-gradient(to right, #CEB2B7, #E2D4D8);
