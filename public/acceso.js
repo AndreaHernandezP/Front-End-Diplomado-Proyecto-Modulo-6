@@ -10,7 +10,7 @@ const form = document.querySelector('form');
 
 
 let mainContainer = document.querySelector('.main-container');
-let container = document.querySelector('.main-box-content');
+let container = document.querySelector('.main-noimg-content');
 
 //barraBusqueda.addEventListener('submit',function(){datosClima()}); //Evento click o submit***
 button.addEventListener('click',function(){datosAPI()}); //Evento click o submit***
