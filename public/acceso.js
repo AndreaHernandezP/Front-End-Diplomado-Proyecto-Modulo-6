@@ -90,6 +90,27 @@ function datosAPI(){
                     let accessPanel = document.querySelector('#contenedorGeneral');
                     accessPanel.style.display = 'none';
 
+                    
+                    //Header Users
+                    
+
+                    const header = (nombre)=>{
+                        const headerUsers = `
+                                            <img class="separador-encabezado" src="Separador_titulo.svg">
+                                            <h1>${nombre}</h1>
+                                            <img class="separador-encabezado" src="Separador_titulo.svg">
+                                        `;
+                        const headerDiv = document.createElement('div');
+                        headerDiv.classList.add('encabezado');
+                        headerDiv.innerHTML = headerUsers;
+                        return headerDiv
+                    }
+
+                    
+                    container.before(header('Usuarios'));
+
+
+
                     //Add Users
                      let users = document.getElementsByTagName('box-noimg'); //Users-list element created
                     for(let i=0; i < data.users.length; i++){
@@ -115,11 +136,18 @@ function datosAPI(){
                         users[i].setAttribute("description", description);                //Changing description
                         //console.log( products[i]);
                     }
+
+                    
                     
                     //Add a comment container
+
                     let commentsContainer = document.createElement('div');
                     commentsContainer.classList.add('main-box-comments');
                     mainContainer.appendChild(commentsContainer);
+
+                    //Header Comments
+                    
+                    commentsContainer.before(header('Comentarios'));
 
                     //Add 3 Posts
                     let post = document.getElementsByTagName('comments-box'); //Post-list element created
@@ -141,18 +169,62 @@ function datosAPI(){
 
                             //Add template comment
                             boxCommentDescription = document.createElement('div');
-                            boxCommentDescription.classList.add('box-comment-description');
+                            /* boxCommentDescription.classList.add('box-comment-description');
                             boxCommentDescription.innerHTML = `<p class="description-title">
                                                                     ${name}<br>${email}
                                                                 </p>
                                                                 <p class="description-content">
                                                                     ${body}
-                                                                </p>`
+                                                                </p>` */
+                            boxCommentDescription.classList.add('box-comment-description', 'hideElement');
+                            boxCommentDescription.innerHTML = `<div class="hideElement-overflow"> <!-- Hide overflow -->
+                                                                    <p class="description-title">
+                                                                        ${name}<br>${email}
+                                                                    </p>
+                                                                    <p class="description-content">
+                                                                        ${body}
+                                                                    </p>
+                                                                </div>`
 
                             boxComment.appendChild(boxCommentDescription);
+
+                            /*              <div class="box-comment-description hideElement">
+                                                <div class="hideElement-overflow"> <!-- Hide overflow -->
+                                                <p class="description-title">
+                                                    odio adipisci rerum aut animi <br>
+                                                    Nikita@garfield.biz
+                                                </p>
+                                                <p class="description-content">
+                                                    quia molestiae reprehenderit quasi aspernatur aut expedita occaecati aliquam eveniet laudantium omnis quibusdam delectus saepe quia accusamus maiores nam est cum et ducimus et vero voluptates excepturi deleniti ratione
+                                                </p>
+                                                </div>
+                                            </div> */
                         }
 
                         //console.log( products[i]);
+                    }
+
+                    const boxComment = document.getElementsByClassName('box-comment');
+
+
+                    for(let i=0; i < boxComment.length; i++){
+                        const commentsTitleImg = boxComment[i].querySelector('.comments-title-img');
+                        commentsTitleImg.addEventListener('click', arrowState);
+                    }
+
+
+                    function arrowState(event){
+                    
+                        //Change image style
+                        this.classList.toggle('comments-title-img-show');
+                        this.classList.toggle('comments-title-img-hide');
+
+                        //Hide or Show content
+                        const boxComment = this.parentElement.parentElement; //grandparent
+                        const boxCommentDescription = boxComment.getElementsByClassName('box-comment-description'); //selects the comments box
+
+                        Array.from(boxCommentDescription).forEach(obj => {obj.classList.toggle('showElement')});
+
                     }
                 } 
             })

@@ -28,7 +28,7 @@ function datosAPI(){
         body: JSON.stringify(obj)
     }).then((response) => {     //reacciona a la respuesta del servidor
             response.json().then((data) => {    //Se recibe la data respondida del Backend que dentro tiene la propiedad "data" (o el nombre dado ej:"dataWeather") y a su vez dentro las propiedades de interés
-                if(data.dataDrinks.error){     //Si hay error    
+                if(data.dataDrinks.drinks == null || data.dataDrinks.error){     //Si hay error    
                     console.log("Error desde el Frontend: ");
                     console.log(data.dataDrinks.error);
 

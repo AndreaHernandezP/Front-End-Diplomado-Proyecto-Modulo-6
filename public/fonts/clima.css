@@ -38,6 +38,8 @@
     text-align:center;
     flex-basis: 100%;  
     position: relative;
+
+    
 }
 
 #nubesAnimacion{
@@ -45,10 +47,11 @@
     width: 50%;
     margin: 0;
     padding: 0;
-    opacity: 20%;
-    animation: 3s linear 1s infinite running slidein;
+    opacity: 0%;
+    animation: 3s linear 0s infinite running slidein;
     left:0; /*En relación al Padre*/
 /*Referencia: https://stackoverflow.com/questions/25982135/why-does-left-50-transform-translatex-50-horizontally-center-an-element*/ 
+    
 }
 
 @keyframes slidein{
@@ -92,6 +95,7 @@ h5{
 form{
     padding: 0px;
     margin: -8px;
+    
 }
 
 input{
